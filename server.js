@@ -99,7 +99,7 @@ app.post("/articles/:id", function (req, res) {
 
   db.Review.create(req.body)
     .then(function (dbReview) {
-      return db.Movie.findOneAndUpdate({ _id: req.params.id }, { Review: dbReview._id }, { new: true })
+      return db.Movie.findOneAndUpdate({ _id: req.params.id }, { review: dbReview._id }, { new: true })
 
     })
     .then(function (updateReview) {

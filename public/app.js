@@ -32,11 +32,11 @@ $.getJSON("/movies", function(data) {
         $("#reviews").append("<button data-id='" + data._id + "' id='savereview'>Save Review</button>");
   
         
-        if (data.note) {
+        if (data.review) {
           
-          $("#titleinput").val(data.note.title);
+          $("#titleinput").val(data.review.title);
           
-          $("#bodyinput").val(data.note.body);
+          $("#bodyinput").val(data.review.body);
         }
       });
   });
