@@ -10,7 +10,10 @@ var cheerio = require("cheerio");
 
 var db = require("./models");
 
-var PORT = 3000;
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/Movie";
+
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 
 var app = express();
@@ -23,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 
-mongoose.connect("mongodb://localhost/Movie");
+
 
 // Routes
 
