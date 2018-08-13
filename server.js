@@ -10,7 +10,7 @@ var cheerio = require("cheerio");
 
 var db = require("./models");
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/Movie";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb:Movie";
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
