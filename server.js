@@ -11,6 +11,7 @@ var cheerio = require("cheerio");
 var db = require("./models");
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb:Movie";
+var PORT = process.env.PORT || 8080;
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
@@ -115,8 +116,8 @@ app.post("/articles/:id", function (req, res) {
 });
 
 
-// app.listen(PORT, function () {
-//   console.log("App running on port " + PORT + "!");
-// });
+app.listen(PORT, function () {
+  console.log("App running on port " + PORT + "!");
+});
 
 
